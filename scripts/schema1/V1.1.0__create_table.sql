@@ -1,6 +1,6 @@
 --version 1 (V captial in the starting is for versioning)
 
-CREATE IF NOT EXISTS SCHEMA ${schema1};
+CREATE SCHEMA  IF NOT EXISTS ${schema1};
 USE SCHEMA ${schema1};
 CREATE TABLE IF NOT EXISTS ${schema1}.table1 (
     ID INT AUTOINCREMENT PRIMARY KEY,
