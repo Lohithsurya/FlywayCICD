@@ -1,0 +1,27 @@
+name: Flyway Migrate (Test)
+
+on:
+  pull_request:
+    branches:
+      - test
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    environment: test
+    container:
+      image: flyway/flyway
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Flyway migrations
+        shell: bash
+        run: |
+          export JAVA_ARGS=--add-opens=java.base/java.nio=ALL-UNNAMED
+          flyway \
+            -user="${{ secrets.SNOWFLAKE_USER }}" \
+            -password="${{ secrets.SNOWFLAKE_PASSWORD }}" \
+            -configFiles=configs/test.conf \
+            migrate
