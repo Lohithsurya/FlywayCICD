@@ -1,4 +1,4 @@
-CREATE IF NOT EXISTS SCHEMA ${schema2};
+CREATE  SCHEMA IF NOT EXISTS ${schema2};
 USE SCHEMA ${schema2};
 
 CREATE TABLE IF NOT EXISTS ${schema2}.table3 (
