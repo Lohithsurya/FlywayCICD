@@ -1,0 +1,8 @@
+--version 2
+
+ALTER table ${schema1}.table1
+ADD COLUMN IF NOT EXISTS UPDATED_AT VARCHAR ;
+
+ALTER table ${schema1}.table2
+ADD COLUMN IF NOT EXISTS  UPDATED_AT VARCHAR  ;
+

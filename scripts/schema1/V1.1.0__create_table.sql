@@ -1,0 +1,17 @@
+--version 1 (V captial in the starting is for versioning)
+
+CREATE SCHEMA  IF NOT EXISTS ${schema1};
+USE SCHEMA ${schema1};
+CREATE TABLE IF NOT EXISTS ${schema1}.table1 (
+    ID INT AUTOINCREMENT PRIMARY KEY,
+    FULL_NAME STRING,
+    CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS ${schema1}.table2 (
+    ID INT AUTOINCREMENT PRIMARY KEY,
+    EMAIL STRING,
+    CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- You can add more tables as needed
